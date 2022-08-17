@@ -23,7 +23,7 @@ Now that you have a bundler you can adapt the code to use your own password gene
 ### Shell
 
 ```bash
-make build
+make clean build
 ```
 
 ## Contributing

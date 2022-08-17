@@ -1,3 +1,2 @@
 PyGreSQL >= 5.2.4
 psycopg2-binary >= 2.9.3
-

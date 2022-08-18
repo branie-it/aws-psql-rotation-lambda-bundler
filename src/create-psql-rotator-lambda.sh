@@ -38,7 +38,7 @@ mv psycopg2_binary.libs/libpq*.so.5* libpq.so.5
 echo "Copied libpq.so from psycopg2_binary to 'dist'"
 
 echo "Copying all required dependencies for libpq.so to 'dist'"
-readelf -d libpq.so.5 | grep 'NEEDED' | awk -F'[][]' '{print $2}' | xargs -I{} mv psycopg2_binary.libs/{} .
+mv psycopg2_binary.libs/* .
 echo "Copied all required dependencies for libpq.so to 'dist'"
 
 echo "Nuking all subdirectories of 'dist'"

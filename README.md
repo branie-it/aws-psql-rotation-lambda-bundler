@@ -1,6 +1,7 @@
 # PSQL Secret Rotator Lambda bundler
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![Release to GitHub](https://github.com/branie-it/aws-psql-rotator-lambda/actions/workflows/release.yml/badge.svg)](https://github.com/branie-it/aws-psql-rotator-lambda/actions/workflows/release.yml)
 
 The scripts in this repository bundle the [PSQL Secret Rotator Lambda](https://github.com/aws-samples/aws-secrets-manager-rotation-lambdas/blob/master/SecretsManagerRDSPostgreSQLRotationSingleUser/lambda_function.py) by Amazon with the required shared libraries.
 

@@ -41,7 +41,9 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          sed -i "s/VERSION=${{ needs.determine_versions.outputs.previous_version }}/VERSION=${{ needs.determine_versions.outputs.version }}/g" src/create-psql-rotator-lambda.sh
+          bin/update-version-occurrences.sh \
+            ${{ needs.determine_versions.outputs.previous_version }} \
+            ${{ needs.determine_versions.outputs.version }}
       - uses: actions/upload-artifact@v2
         with:
           name: bump_versions_source

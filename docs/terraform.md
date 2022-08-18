@@ -8,7 +8,7 @@ I recommend you fork this repository and point the `package_url` there though, b
 ```tf
 locals {
   # Change this url to your fork of this repository
-  package_url = "https://github.com/branie-it/aws-psql-rotator-lambda/releases/download/v0.0.0/lambda_function-3.8-0.0.0.zip"
+  package_url = "https://github.com/branie-it/aws-psql-rotator-lambda/releases/download/0.0.0/lambda_function-3.8-0.0.0.zip"
   downloaded  = "psql_rotator_lambda_${md5(local.package_url)}.zip"
 }
 

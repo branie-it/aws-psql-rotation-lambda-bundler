@@ -48,6 +48,10 @@ jobs:
         with:
           name: bump_versions_source
           path: src
+      - uses: actions/upload-artifact@v2
+        with:
+          name: bump_versions_docs
+          path: docs
   build_artifacts:
     runs-on: ubuntu-latest
     needs:
@@ -90,6 +94,12 @@ jobs:
           name: bump_versions_source
           path: src
       - uses: actions/download-artifact@v2
+        with:
+          name: bump_versions_docs
+          path: docs
+      - uses: actions/download-artifact@v2
+        with:
+          path: dist
       - run: |
           git config user.name "${{ env.gh-release-user-name }}"
           git config user.email ${{ secrets.GH_RELEASE_USER_EMAIL }}
@@ -98,6 +108,6 @@ jobs:
           git push
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/*.zip"
+          artifacts: "dist/**/*.zip"
           token: "${{ secrets.GITHUB_TOKEN }}"
           tag: "${{ needs.determine_versions.outputs.version }}"
